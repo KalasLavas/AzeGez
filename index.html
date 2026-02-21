@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travle Azerbaijan</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel">
+        <h1>Travle Azerbaijan</h1>
+        <p class="subtitle">Travel from one district to another through shared borders.</p>
+
+        <div id="status" class="status">Loading regions...</div>
+
+        <label class="mode-toggle" for="easyModeToggle">
+          <input id="easyModeToggle" type="checkbox" checked />
+          Easy mode
+        </label>
+
+        <div class="challenge" id="challenge" hidden>
+          <p><span>Start:</span> <strong id="startName"></strong></p>
+          <p><span>Target:</span> <strong id="endName"></strong></p>
+          <p><span>Current:</span> <strong id="currentName"></strong></p>
+        </div>
+
+        <form id="guessForm" class="guess-form" hidden>
+          <label for="guessInput">Next neighboring region</label>
+          <div class="row">
+            <input id="guessInput" name="guess" list="regionList" autocomplete="off" required />
+            <button type="submit">Go</button>
+          </div>
+          <datalist id="regionList"></datalist>
+        </form>
+
+        <div class="actions" hidden id="actions">
+          <button id="newGameButton" type="button">New Challenge</button>
+          <button id="revealButton" type="button">Reveal Shortest Path</button>
+        </div>
+
+        <section class="log-wrap" hidden id="logWrap">
+          <h2>Moves</h2>
+          <ol id="moveLog" class="log"></ol>
+        </section>
+      </section>
+
+      <section class="map-wrap">
+        <div id="map"></div>
+      </section>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
