@@ -263,7 +263,7 @@ function submitGuess(rawInput) {
 function finishGame(selectedPath) {
   state.finished = true;
   const shortestPath = findShortestPath(state.startId, state.endId);
-  const playerSteps = Math.max(0, selectedPath.length - 2);
+  const playerSteps = Math.max(0, state.visited.length - 2);
   const shortestSteps = Math.max(0, shortestPath.length - 2);
   const extra = Math.max(0, playerSteps - shortestSteps);
 
