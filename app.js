@@ -13,7 +13,7 @@ const state = {
   easyMode: true,
 };
 
-const EASY_MODE_STORAGE_KEY = "travle-az-easy-mode";
+const EASY_MODE_STORAGE_KEY = "azegez-easy-mode";
 
 const ui = {
   status: document.getElementById("status"),
