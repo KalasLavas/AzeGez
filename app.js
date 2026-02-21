@@ -148,12 +148,6 @@ function createMap() {
     onEachFeature: (feature, layer) => {
       const { id } = feature.properties;
       state.layerById.set(id, layer);
-      layer.on("click", () => {
-        if (!state.finished && state.currentId !== null) {
-          const region = state.byId.get(id);
-          submitGuess(formatRegionName(region));
-        }
-      });
     },
   }).addTo(state.map);
 
